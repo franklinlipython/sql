@@ -56,7 +56,10 @@ The store wants to keep customer addresses. Propose two architectures for the CU
 **HINT:** search type 1 vs type 2 slowly changing dimensions. 
 
 ```
-Your answer...
+Type 1 and Type 2 slowly changing dimensions differ in how they handle updates to customer address information. A Type 1 architecture overwrites the existing address whenever a customer changes address, meaning only the most current address is stored and historical information is lost. This approach is simpler and requires only one row per customer. 
+
+In contrast, a Type 2 architecture preserves address history by inserting a new row whenever an address changes instead of overwriting the previous one. The older row is retained and typically marked with fields such as effective_start_date, effective_end_date, and is_current. This allows the database to track how customer addresses change over time.
+
 ```
 
 ***
